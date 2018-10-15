@@ -1,0 +1,20 @@
+.taxonomy-label {
+    width: 150px;
+    display: inline-block;
+}
+.tax-children {
+   padding-left: 30px;
+    width: 100%;
+    max-width: 270px;
+    margin-bottom: 10px;
+}
+.tax-parent {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+
+}
+.tax-children input, .tax-parent input {
+    float: right;
+    margin: 0;
+}

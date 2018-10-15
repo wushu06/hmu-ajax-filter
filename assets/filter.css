@@ -1,0 +1,61 @@
+.hmu-container {
+    width: 90%;
+    margin: auto;
+    min-width: 200px;
+}
+.hmu-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+
+.hmu_filter_attributes {
+    height: 20px;
+    max-width: 50px;
+    width: 100%;
+}
+.hmucol-md-10 {
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+}
+.hmucol-md-2 {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+}
+.hmucol-sm-2 {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+}
+.hmucol-sm-10 {
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+}
+@media(max-width: 991px) {
+    .hmu_filter_attributes {
+        float: left;
+    }
+}
+.disabled {
+    opacity: 0.2;
+}
+.parent-active a {
+    color: red;
+}
+.hmu-hide-input {
+    visibility: hidden;
+    opacity: 0;
+}
+.hmu-label {
+    cursor: pointer;
+}
