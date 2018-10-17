@@ -51,7 +51,7 @@ use Inc\Filter\HmuCategoryFilter;
 
 if (isset($_POST['hmu_woo_filter_meta_nonce']) && wp_verify_nonce($_POST['hmu_woo_filter_meta_nonce'],
         'hmu_woo_filter_form_nonce')) {
-    unset($_POST['action'], $_POST['hmu_woo_filter_meta_nonce'], $_POST['submit']);
+    unset($_POST['action'], $_POST['hmu_woo_filter_meta_nonce'], $_POST['submit'], $_POST['parent']);
     update_option('hmu_woo_filter', $_POST);
 
 }
@@ -94,8 +94,8 @@ if ($dashboard = get_option('hmu_dashboard')) {
 
             }
             foreach ($taxonomy_objects as $tax) {
-                echo '<h1>' . $tax . '</h1>';
-
+                echo '<label class="taxonomy-label parent-label">' . $tax . '</label>';
+                echo '<input type="checkbox" name="parent" class="parent-checkbox" data-class="'.$tax.'" >';
                 $terms = get_terms($tax, 'orderby=count&hide_empty=1');
                 if (!empty($terms) && !is_wp_error($terms)) {
                     foreach ($terms as $term) {
@@ -105,7 +105,7 @@ if ($dashboard = get_option('hmu_dashboard')) {
                             <label class="taxonomy-label" for=""><?php echo $term->name; ?></label>
                             <input
                                     id=""
-                                    class="taxonomy-checkbox"
+                                    class="<?php echo $tax ?> taxonomy-checkbox"
                                     data-value=" <?php echo $term->term_id; ?> "
                                     type="checkbox"
                                     name="<?php echo $tax . '[' . $this->seoUrl($term->name) . ']'; ?>"
@@ -178,7 +178,6 @@ if ($dashboard = get_option('hmu_dashboard')) {
         });
         $('.taxonomy-checkbox').on('change', function () {
             var value = $(this).attr('data-value');
-            console.log(value)
             if ($(this).is(':checked')) {
                 $(this).attr('value', value)
             } else {
@@ -186,6 +185,18 @@ if ($dashboard = get_option('hmu_dashboard')) {
             }
             console.log($(this).attr('value'));
         })
+
+        $('.parent-checkbox').on('change', function () {
+            var dataClass = $(this).attr('data-class');
+            console.log(dataClass);
+            if ($(this).is(':checked')) {
+                $('.'+dataClass).prop('checked', true);
+
+            } else {
+                $('.'+dataClass).prop('checked', false);
+
+            }
+        });
     })
 </script>
         <?php endif; ?>
