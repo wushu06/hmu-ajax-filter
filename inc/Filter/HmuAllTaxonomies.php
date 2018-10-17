@@ -121,10 +121,19 @@ class HmuAllTaxonomies extends BaseController
 
         $checkbox = '0';
         $hide_parent = '0';
+        $custom_css = '';
+
         if ($dashboard = get_option('hmu_dashboard')) {
             $checkbox = array_key_exists('use_checkbox', $dashboard)  ? $dashboard['use_checkbox'] : '0';
             $hide_parent = array_key_exists('hide_parent', $dashboard) ? $dashboard['hide_parent'] : '0' ;
+            $custom_css = array_key_exists('custom-css', $dashboard) ? $dashboard['custom-css'] : '' ;
             //  var_dump($dashboard);
+        }
+
+        if($custom_css !==''){
+            echo '<style>';
+            echo $custom_css;
+            echo '</style>';
         }
 
 

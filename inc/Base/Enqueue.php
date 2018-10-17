@@ -39,5 +39,8 @@ class Enqueue extends BaseController
         }
 
         wp_enqueue_style('hmuAdminCss', plugins_url() . '/hmu-woo-filter/assets/hmu-admin.css', array(), '1.0.1');
+        wp_enqueue_style('hmuAdminStyleCss', plugins_url() . '/hmu-woo-filter/assets/hmu.custom_css.css', array(), '1.0.1');
+        wp_enqueue_script('aceJs', plugins_url() . '/hmu-woo-filter/assets/ace/ace.js', array(), null, true);
+        wp_enqueue_script('hmuCssJs', plugins_url() . '/hmu-woo-filter/assets/hmu_css.js', array(), null, true);
     }
 }

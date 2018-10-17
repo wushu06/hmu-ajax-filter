@@ -116,12 +116,60 @@ class Admin extends BaseController
 		$this->settings->setSections( $args );
 	}
 
-	public function setFields()
+    public function dahboardFields()
+    {
+        return  array(
+            // ID
+            //0- title 1- callback 2-page 3- section 4- option name 5-input type
+
+            'wrapper_id' =>
+                array('',
+                    'hmuWrapperID',
+                    'hmu_woo_filter',
+                    'hmu_dashboard_index',
+                    'hmu_dashboard',
+                ),
+            'custom_class' =>
+                array('',
+                    'hmuCustomCLass',
+                    'hmu_woo_filter',
+                    'hmu_dashboard_index',
+                    'hmu_dashboard',
+                ),
+            'use_checkbox' =>
+                array('Remove checkboxes',
+                    'hmuCheckboxLabel',
+                    'hmu_woo_filter',
+                    'hmu_dashboard_index',
+                    'hmu_dashboard',
+                ),
+            'hide_parent' =>
+                array('Hide categories parents',
+                    'hmuHideParents',
+                    'hmu_woo_filter',
+                    'hmu_dashboard_index',
+                    'hmu_dashboard',
+                ),
+            'custom-css' =>
+                array('Insert your Custom CSS',
+                    'sunset_custom_css_callback',
+                    'hmu_woo_filter',
+                    'hmu_dashboard_index',
+                    'hmu_dashboard',
+                ),
+
+
+        );
+
+
+    }
+
+    public function setFields()
 	{
 		$args = array ();
 
 
-		foreach ($this->dahboardFields   as $id_dash => $dashtitle_callback ) {
+		foreach ($this->dahboardFields()   as $id_dash => $dashtitle_callback ) {
 			
 			$args[] = array (
 				'id' => $id_dash,

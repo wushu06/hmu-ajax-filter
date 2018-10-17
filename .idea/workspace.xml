@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="853c9e07-0e70-4332-bd9d-068bf85f8093" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/filter.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/filter.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/filter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/Api/Callbacks/AdminCallbacks.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Api/Callbacks/AdminCallbacks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/hmu-admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/hmu-admin.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/Api/Callbacks/FieldsCallbacks.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Api/Callbacks/FieldsCallbacks.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/Base/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Base/BaseController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/Base/Enqueue.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Base/Enqueue.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/Filter/HmuAllTaxonomies.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Filter/HmuAllTaxonomies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/Filter/__HmuAllTaxonomies.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Filter/__HmuAllTaxonomies.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/Pages/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Pages/Admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/dashboard.php" afterDir="false" />
     </list>
@@ -25,38 +24,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/template/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="46" column="42" lean-forward="true" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
+            <state relative-caret-position="180">
+              <caret line="72" column="43" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
+              <folding>
+                <element signature="e#7#35#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HmuAllTaxonomies.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/inc/Filter/HmuAllTaxonomies.php">
+      <file leaf-file-name="Admin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/Pages/Admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="124" column="36" selection-start-line="124" selection-start-column="36" selection-end-line="124" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="filter.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/filter.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/Base/BaseController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="24" />
+            <state relative-caret-position="420">
+              <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -64,8 +48,20 @@
       <file leaf-file-name="FieldsCallbacks.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/Api/Callbacks/FieldsCallbacks.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="116" column="49" selection-start-line="116" selection-start-column="49" selection-end-line="116" selection-end-column="49" />
+            <state relative-caret-position="604">
+              <caret line="70" column="31" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="31" />
+              <folding>
+                <element signature="n#style#0;n#textarea#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HmuAllTaxonomies.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/Filter/HmuAllTaxonomies.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="135" column="28" selection-start-line="135" selection-start-column="28" selection-end-line="135" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -77,10 +73,17 @@
       <find>ajaxca</find>
       <find>href</find>
       <find>checkboxCron</find>
+      <find>‘</find>
+      <find>map</find>
+      <find>52.550178, -0.324301</find>
+      <find>agenda</find>
+      <find>$chec</find>
+      <find>dahboardField</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>hmuCheckbox</replace>
+      <replace>'</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -90,11 +93,22 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/assets/filter.js" />
-        <option value="$PROJECT_DIR$/template/dashboard.php" />
-        <option value="$PROJECT_DIR$/assets/filter.css" />
+        <option value="&lt;228e0e38-2767-4407-bff1-ce1a1e3dcfd8&gt;/public_html/wp-content/themes/AB360/header.php" />
+        <option value="&lt;228e0e38-2767-4407-bff1-ce1a1e3dcfd8&gt;/public_html/wp-content/themes/AB360/functions.php" />
+        <option value="&lt;228e0e38-2767-4407-bff1-ce1a1e3dcfd8&gt;/public_html/wp-content/themes/AB360/assets/src/js/app.js" />
+        <option value="&lt;228e0e38-2767-4407-bff1-ce1a1e3dcfd8&gt;/public_html/wp-content/themes/AB360/front-page.php" />
+        <option value="&lt;228e0e38-2767-4407-bff1-ce1a1e3dcfd8&gt;/public_html/wp-content/themes/AB360/assets/dist/js/app.js" />
+        <option value="&lt;228e0e38-2767-4407-bff1-ce1a1e3dcfd8&gt;/public_html/wp-content/themes/AB360/home.php" />
         <option value="$PROJECT_DIR$/inc/Base/BaseController.php" />
-        <option value="$PROJECT_DIR$/inc/Api/Callbacks/FieldsCallbacks.php" />
+        <option value="$PROJECT_DIR$/assets/filter.css" />
+        <option value="$PROJECT_DIR$/assets/hmu-admin.css" />
+        <option value="$PROJECT_DIR$/inc/Base/Enqueue.php" />
+        <option value="$PROJECT_DIR$/assets/hmu.custom_css.css" />
+        <option value="$PROJECT_DIR$/assets/hmu_css.js" />
         <option value="$PROJECT_DIR$/inc/Filter/HmuAllTaxonomies.php" />
+        <option value="$PROJECT_DIR$/inc/Pages/Admin.php" />
+        <option value="$PROJECT_DIR$/inc/Api/Callbacks/FieldsCallbacks.php" />
+        <option value="$PROJECT_DIR$/template/dashboard.php" />
       </list>
     </option>
   </component>
@@ -133,6 +147,52 @@
               <item name="hmu-woo-filter" type="b2602c69:ProjectViewProjectNode" />
               <item name="hmu-woo-filter" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="hmu-woo-filter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hmu-woo-filter" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hmu-woo-filter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hmu-woo-filter" type="462c0819:PsiDirectoryNode" />
+              <item name="inc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hmu-woo-filter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hmu-woo-filter" type="462c0819:PsiDirectoryNode" />
+              <item name="inc" type="462c0819:PsiDirectoryNode" />
+              <item name="Api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hmu-woo-filter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hmu-woo-filter" type="462c0819:PsiDirectoryNode" />
+              <item name="inc" type="462c0819:PsiDirectoryNode" />
+              <item name="Api" type="462c0819:PsiDirectoryNode" />
+              <item name="Callbacks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hmu-woo-filter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hmu-woo-filter" type="462c0819:PsiDirectoryNode" />
+              <item name="inc" type="462c0819:PsiDirectoryNode" />
+              <item name="Base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hmu-woo-filter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hmu-woo-filter" type="462c0819:PsiDirectoryNode" />
+              <item name="inc" type="462c0819:PsiDirectoryNode" />
+              <item name="Filter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hmu-woo-filter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hmu-woo-filter" type="462c0819:PsiDirectoryNode" />
+              <item name="inc" type="462c0819:PsiDirectoryNode" />
+              <item name="Pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hmu-woo-filter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hmu-woo-filter" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -140,8 +200,13 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
@@ -169,26 +234,29 @@
       <option name="presentableId" value="Default" />
       <updated>1539537404654</updated>
       <workItem from="1539537405961" duration="4999000" />
-      <workItem from="1539637145818" duration="1384000" />
+      <workItem from="1539637145818" duration="7938000" />
+      <workItem from="1539803689194" duration="6546000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6383000" />
+    <option name="totallyTimeSpent" value="19483000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="702" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25378788" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.2513181" />
+      <window_info anchor="right" id="Remote Host" order="3" weight="0.23787878" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25378788" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32864675" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -221,13 +289,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/Base/Enqueue.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/filter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -235,38 +296,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/Api/Callbacks/FieldsCallbacks.php">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="116" column="49" selection-start-line="116" selection-start-column="49" selection-end-line="116" selection-end-column="49" />
+        <state>
+          <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/Api/SettingsApi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1961" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/Base/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/filter.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
+        <state relative-caret-position="409">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/Base/BaseController.php">
+    <entry file="file://$PROJECT_DIR$/assets/hmu-admin.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="24" />
+        <state relative-caret-position="360">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/dashboard.php">
+    <entry file="file://$PROJECT_DIR$/inc/Base/Enqueue.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="46" column="42" lean-forward="true" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
+        <state relative-caret-position="409">
+          <caret line="41" column="95" selection-start-line="41" selection-start-column="95" selection-end-line="41" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/hmu.custom_css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="63" selection-start-column="63" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/hmu_css.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/Filter/HmuAllTaxonomies.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="124" column="36" selection-start-line="124" selection-start-column="36" selection-end-line="124" selection-end-column="36" />
+        <state relative-caret-position="315">
+          <caret line="135" column="28" selection-start-line="135" selection-start-column="28" selection-end-line="135" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/Pages/Admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/Api/Callbacks/FieldsCallbacks.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="70" column="31" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#textarea#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="72" column="43" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
+          <folding>
+            <element signature="e#7#35#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

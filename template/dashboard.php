@@ -4,18 +4,49 @@ use Inc\Base\BaseController;
 use Inc\Filter\HmuCategoryFilter;
 
 ?>
-<h1><?php echo esc_html(get_admin_page_title()); ?></h1>
+<h1><?php echo esc_html(get_admin_page_title()); ?> Woo Filter</h1>
 
-<h2>Plugin's Panel Control</h2>
-
-
-<form method="post" class="hmu-general-form" action="options.php">
+<div class="wrap">
+    <?php settings_errors(); ?>
     <?php
-   settings_fields( 'hmu_dashboard_options_group' );
-    do_settings_sections( 'hmu_woo_filter' );
-    submit_button( 'Save Settings', 'hmu-btn hmu-primary', 'btnSubmit' );
+    $active_tab = '';
+    if( isset( $_GET[ 'tab' ] ) )
+        $active_tab = $_GET[ 'tab' ];
     ?>
-</form>
+
+
+    <h2 class="nav-tab-wrapper">
+        <a href="?page=hmu_woo_filter&tab=taxonomy_settings" class="nav-tab <?php echo ( $_GET[ 'tab' ] ==''  ||  $_GET[ 'tab' ] =='taxonomy_settings'  ) ? 'tab-active' :  '';
+        ?>
+        <?php  echo ( $_GET[ 'tab' ] ==''  ) ? $_GET[ 'tab' ] :  ''; ?>">Taxonomy settings</a>
+        <a href="?page=hmu_woo_filter&tab=global_settings" class="nav-tab <?php echo  ( $_GET[ 'tab' ] =='global_settings' ) ? 'tab-active' :  ''; ?>">Global settings</a>
+    </h2>
+
+
+
+    <div class="container">
+        <?php
+        if( $active_tab == 'global_settings' ):
+
+        ?>
+
+
+            <form method="post" class="hmu-general-form" action="options.php">
+                <?php
+                settings_fields( 'hmu_dashboard_options_group' );
+                do_settings_sections( 'hmu_woo_filter' );
+                submit_button( 'Save Settings', 'hmu-btn hmu-primary', 'btnSubmit' );
+                ?>
+            </form>
+        <?php endif; ?>
+        <?php
+        if( $active_tab == 'taxonomy_settings' || $active_tab == ''  ):
+
+        ?>
+
+
+
+
 <?php
 
 if (isset($_POST['hmu_woo_filter_meta_nonce']) && wp_verify_nonce($_POST['hmu_woo_filter_meta_nonce'],
@@ -34,13 +65,12 @@ if ($option_terms = get_option('hmu_woo_filter')) {
 
     //var_dump(get_option('hmu_woo_filter'));
 }
-$checkbox = '0';
+
 if ($dashboard = get_option('hmu_dashboard')) {
-    $checkbox = $dashboard['use_checkbox'];
-  //  var_dump($dashboard);
+    //var_dump($dashboard);
 }
 ?>
-
+<p>Choose categories you want to filter by:</p>
 <div class="block--shop_filter">
     <div class="block--shop_filter_attributes" id="">
         <form action="<?php echo esc_url(admin_url('admin.php?page=hmu_woo_filter')); ?>" method="post"
@@ -130,8 +160,12 @@ if ($dashboard = get_option('hmu_dashboard')) {
 
 
     </div>
+    <div class="hmu_delete_wrapper">
+        <a class="hmu_delete" href="<?php echo esc_url(admin_url('admin.php?page=hmu_woo_filter&reset=true')); ?>">Reset to default</a>
+
+    </div>
 </div>
-<a class="hmu_delete" href="<?php echo esc_url(admin_url('admin.php?page=hmu_woo_filter&reset=true')); ?>">Reset</a>
+
 
 <script>
     jQuery(function ($) {
@@ -154,3 +188,7 @@ if ($dashboard = get_option('hmu_dashboard')) {
         })
     })
 </script>
+        <?php endif; ?>
+
+    </div>
+</div>
