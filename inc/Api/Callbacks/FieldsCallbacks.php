@@ -26,6 +26,17 @@ class FieldsCallbacks extends BaseController
     {
     }
 
+    public function hmuTemplate($args)
+    {
+        $name = $args['label_for'];
+        $classes = $args['class'];
+        $option_name = $args['option_name'];
+        $value = get_option($option_name);
+        $isvalue = isset($value[$name]) ? $value[$name] : '';
+        echo '<input type="text" class="regular-text hmu-input" name="' . $option_name . '[' . $name . ']"  value="' . $isvalue . '"  placeholder="Default is woocommerce content-product">';
+    }
+
+
     public function hmuWrapperID($args)
     {
         $name = $args['label_for'];

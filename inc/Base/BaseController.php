@@ -26,8 +26,8 @@ class BaseController
 
         $this->subpagesOutput = array(
 
-            'hmu_woo_filter' =>
-                array('Hmu woo filter', 'hmu_filter_callback'),
+            'hmu_ajax_filter' =>
+                array('Hmu ajax filter', 'hmu_filter_callback'),
 
         );
 

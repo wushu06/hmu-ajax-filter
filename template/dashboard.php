@@ -17,10 +17,10 @@ use Inc\Filter\HmuCategoryFilter;
 
 
     <h2 class="nav-tab-wrapper">
-        <a href="?page=hmu_woo_filter&tab=taxonomy_settings" class="nav-tab <?php echo ( $_GET[ 'tab' ] ==''  ||  $_GET[ 'tab' ] =='taxonomy_settings'  ) ? 'tab-active' :  '';
+        <a href="?page=hmu_ajax_filter&tab=taxonomy_settings" class="nav-tab <?php echo ( $_GET[ 'tab' ] ==''  ||  $_GET[ 'tab' ] =='taxonomy_settings'  ) ? 'tab-active' :  '';
         ?>
         <?php  echo ( $_GET[ 'tab' ] ==''  ) ? $_GET[ 'tab' ] :  ''; ?>">Taxonomy settings</a>
-        <a href="?page=hmu_woo_filter&tab=global_settings" class="nav-tab <?php echo  ( $_GET[ 'tab' ] =='global_settings' ) ? 'tab-active' :  ''; ?>">Global settings</a>
+        <a href="?page=hmu_ajax_filter&tab=global_settings" class="nav-tab <?php echo  ( $_GET[ 'tab' ] =='global_settings' ) ? 'tab-active' :  ''; ?>">Global settings</a>
     </h2>
 
 
@@ -35,7 +35,7 @@ use Inc\Filter\HmuCategoryFilter;
             <form method="post" class="hmu-general-form" action="options.php">
                 <?php
                 settings_fields( 'hmu_dashboard_options_group' );
-                do_settings_sections( 'hmu_woo_filter' );
+                do_settings_sections( 'hmu_ajax_filter' );
                 submit_button( 'Save Settings', 'hmu-btn hmu-primary', 'btnSubmit' );
                 ?>
             </form>
@@ -50,21 +50,21 @@ use Inc\Filter\HmuCategoryFilter;
 
 <?php
 
-if (isset($_POST['hmu_woo_filter_meta_nonce']) && wp_verify_nonce($_POST['hmu_woo_filter_meta_nonce'],
-        'hmu_woo_filter_form_nonce')) {
-    unset($_POST['action'], $_POST['hmu_woo_filter_meta_nonce'], $_POST['submit'], $_POST['parent']);
-    update_option('hmu_woo_filter', $_POST);
+if (isset($_POST['hmu_ajax_filter_meta_nonce']) && wp_verify_nonce($_POST['hmu_ajax_filter_meta_nonce'],
+        'hmu_ajax_filter_form_nonce')) {
+    unset($_POST['action'], $_POST['hmu_ajax_filter_meta_nonce'], $_POST['submit'], $_POST['parent']);
+    update_option('hmu_ajax_filter', $_POST);
 
 }
 if (isset($_GET['reset']) && $_GET['reset'] == 'true') {
 
-    update_option('hmu_woo_filter', array());
-    wp_redirect(admin_url('admin.php?page=hmu_woo_filter'));
+    update_option('hmu_ajax_filter', array());
+    wp_redirect(admin_url('admin.php?page=hmu_ajax_filter'));
 }
 
-if ($option_terms = get_option('hmu_woo_filter')) {
+if ($option_terms = get_option('hmu_ajax_filter')) {
 
-    //var_dump(get_option('hmu_woo_filter'));
+    //var_dump(get_option('hmu_ajax_filter'));
 }
 
 if ($dashboard = get_option('hmu_dashboard')) {
@@ -74,14 +74,14 @@ if ($dashboard = get_option('hmu_dashboard')) {
 <p>Choose categories you want to filter by:</p>
 <div class="block--shop_filter">
     <div class="block--shop_filter_attributes" id="">
-        <form action="<?php echo esc_url(admin_url('admin.php?page=hmu_woo_filter')); ?>" method="post"
+        <form action="<?php echo esc_url(admin_url('admin.php?page=hmu_ajax_filter')); ?>" method="post"
               id="nds_add_user_meta_form">
 
             <input type="hidden" name="action" value="hmu_form_response">
-            <input type="hidden" name="hmu_woo_filter_meta_nonce"
-                   value="<?php echo wp_create_nonce('hmu_woo_filter_form_nonce') ?>"/>
+            <input type="hidden" name="hmu_ajax_filter_meta_nonce"
+                   value="<?php echo wp_create_nonce('hmu_ajax_filter_form_nonce') ?>"/>
             <?php
-            $option_terms = get_option('hmu_woo_filter') ? get_option('hmu_woo_filter') : array();
+            $option_terms = get_option('hmu_ajax_filter') ? get_option('hmu_ajax_filter') : array();
             $taxonomies = get_taxonomies();
             $taxonomy_object_clean = array();
             $taxonomy_objects_all = get_object_taxonomies('product', 'names');
@@ -166,7 +166,7 @@ if ($dashboard = get_option('hmu_dashboard')) {
 
     </form>
     <div class="hmu_delete_wrapper">
-        <a class="hmu_delete" href="<?php echo esc_url(admin_url('admin.php?page=hmu_woo_filter&reset=true')); ?>">Reset to default</a>
+        <a class="hmu_delete" href="<?php echo esc_url(admin_url('admin.php?page=hmu_ajax_filter&reset=true')); ?>">Reset to default</a>
 
     </div>
 </div>

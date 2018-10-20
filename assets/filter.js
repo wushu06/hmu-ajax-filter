@@ -95,6 +95,7 @@ jQuery(document).ready(function ($) {
         });
         if(href === ''){
            // console.log('no ajax attr');
+            ajaxCall( href, false);
         }else{
             let archive = {archiveTerm}
 
@@ -107,7 +108,7 @@ jQuery(document).ready(function ($) {
             }
             console.log(href)
 
-            ajaxCall( href,true);
+            ajaxCall( href, true);
             // add checked to relevant inputs
 
         }
@@ -176,11 +177,7 @@ jQuery(document).ready(function ($) {
             });
            // $(this).prop('checked', true);
             //   $(this).off("click").attr('data-url', termHref).attr('href', "javascript: void(0);").addClass('active');
-            $(this).parent().addClass('parent-active');
-            $(this).parent().siblings().removeClass('parent-active');
-
-            //
-            // console.log(termTax);
+            $(this).parent().siblings().addClass('hmu-active');
 
 
         }else {
@@ -193,6 +190,9 @@ jQuery(document).ready(function ($) {
 
                 //
             }
+            $(this).parent().siblings().removeClass('hmu-active');
+
+
         }
         initAjax(archiveTax , archiveTerm);
     });

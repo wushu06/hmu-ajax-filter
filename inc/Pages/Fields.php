@@ -68,7 +68,7 @@ class Fields extends BaseController
                 'id' => 'hmu_dashboard_index',
                 'title' => 'Dashboard',
                 'callback' => array( $this->fields_callbacks, 'dashboardSectionManager' ),
-                'page' => 'hmu_woo_filter' //dahboard page
+                'page' => 'hmu_ajax_filter' //dahboard page
             )
 		);
 
@@ -80,39 +80,45 @@ class Fields extends BaseController
         return  array(
             // ID
             //0- title 1- callback 2-page 3- section 4- option name 5-input type
-
+            'hmu_template' =>
+                array('Template part',
+                    'hmuTemplate',
+                    'hmu_ajax_filter',
+                    'hmu_dashboard_index',
+                    'hmu_dashboard',
+                ),
             'wrapper_id' =>
-                array('',
+                array('id attribute',
                     'hmuWrapperID',
-                    'hmu_woo_filter',
+                    'hmu_ajax_filter',
                     'hmu_dashboard_index',
                     'hmu_dashboard',
                 ),
             'custom_class' =>
-                array('',
+                array('class attribute',
                     'hmuCustomCLass',
-                    'hmu_woo_filter',
+                    'hmu_ajax_filter',
                     'hmu_dashboard_index',
                     'hmu_dashboard',
                 ),
             'use_checkbox' =>
                 array('Remove checkboxes',
                     'hmuCheckboxLabel',
-                    'hmu_woo_filter',
+                    'hmu_ajax_filter',
                     'hmu_dashboard_index',
                     'hmu_dashboard',
                 ),
             'hide_parent' =>
                 array('Hide categories parents',
                     'hmuHideParents',
-                    'hmu_woo_filter',
+                    'hmu_ajax_filter',
                     'hmu_dashboard_index',
                     'hmu_dashboard',
                 ),
             'custom-css' =>
                 array('Insert your Custom CSS',
                     'sunset_custom_css_callback',
-                    'hmu_woo_filter',
+                    'hmu_ajax_filter',
                     'hmu_dashboard_index',
                     'hmu_dashboard',
                 ),

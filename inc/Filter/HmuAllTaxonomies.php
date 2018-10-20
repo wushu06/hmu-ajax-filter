@@ -13,10 +13,10 @@ class HmuAllTaxonomies extends BaseController
     public static function hmu_get_term_option()
     {
         $option_terms = array();
-        if (get_option('hmu_woo_filter')) {
+        if (get_option('hmu_ajax_filter')) {
 
-            $option_terms = get_option('hmu_woo_filter');
-            // var_dump(get_option('hmu_woo_filter'));
+            $option_terms = get_option('hmu_ajax_filter');
+            // var_dump(get_option('hmu_ajax_filter'));
         }
 
         return $option_terms;
@@ -108,7 +108,7 @@ class HmuAllTaxonomies extends BaseController
 
         $taxonomies = $this->hmu_post_terms_loop();
 
-        $option_terms = get_option('hmu_woo_filter') ? get_option('hmu_woo_filter') : array();
+        $option_terms = get_option('hmu_ajax_filter') ? get_option('hmu_ajax_filter') : array();
         //for tax
         $option_keys =  array_keys($option_terms);
         $option_values = array_values($option_terms);
@@ -138,8 +138,8 @@ class HmuAllTaxonomies extends BaseController
 
 
         if (!empty($taxonomies)): ?>
-            <div class="block--shop_filter container">
-                <div class="block--shop_filter_attributes row" id="">
+            <div class="block--shop_filter">
+                <div class="block--shop_filter_attributes" id="">
 
 
                     <?php
@@ -148,7 +148,7 @@ class HmuAllTaxonomies extends BaseController
                         <?php
                         if($hide_parent == '0'):
                         if (in_array($key, $option_keys) ) :
-                             echo '<div class="hmu-container"><div class="hmu-row"><div class="col-md-12"><h2 class="text-left">' . $key . '</h2></div></div>';
+                             echo '<div class="hmu-container"><div class="hmu-row"><div class="hmucol-md-10 hmucol-sm-10"><h2 class="text-left hmu-parent-title">' . $key . '</h2></div></div>';
                         endif; // check key in option
                         endif; // hide parent
                         foreach (array_count_values($b) as $child => $count) {

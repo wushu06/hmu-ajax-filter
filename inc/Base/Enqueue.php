@@ -15,9 +15,9 @@ class Enqueue extends BaseController
 
     public function hmu_filter_scripts()
     {
-        wp_enqueue_style('bootstrapCss', plugins_url() . '/hmu-woo-filter/assets/bootstrap.min.css', array(), '1.0.1');
-        wp_enqueue_style('hmuCss', plugins_url() . '/hmu-woo-filter/assets/filter.css', array(), '1.0.1');
-        wp_enqueue_script('hmuJs', plugins_url() . '/hmu-woo-filter/assets/filter.js', array(), null, true);
+        wp_enqueue_style('bootstrapCss', plugins_url() . '/hmu-ajax-filter/assets/bootstrap.min.css', array(), '1.0.1');
+        wp_enqueue_style('hmuCss', plugins_url() . '/hmu-ajax-filter/assets/filter.css', array(), '1.0.1');
+        wp_enqueue_script('hmuJs', plugins_url() . '/hmu-ajax-filter/assets/filter.js', array(), null, true);
 
         $id = '';
         if ($dashboard_option = get_option('hmu_dashboard')) {
@@ -34,13 +34,13 @@ class Enqueue extends BaseController
 
     public function hmu_admin_filter_scripts($hook)
     {
-        if ($hook != 'toplevel_page_hmu_woo_filter') {
+        if ($hook != 'toplevel_page_hmu_ajax_filter') {
             return;
         }
 
-        wp_enqueue_style('hmuAdminCss', plugins_url() . '/hmu-woo-filter/assets/hmu-admin.css', array(), '1.0.1');
-        wp_enqueue_style('hmuAdminStyleCss', plugins_url() . '/hmu-woo-filter/assets/hmu.custom_css.css', array(), '1.0.1');
-        wp_enqueue_script('aceJs', plugins_url() . '/hmu-woo-filter/assets/ace/ace.js', array(), null, true);
-        wp_enqueue_script('hmuCssJs', plugins_url() . '/hmu-woo-filter/assets/hmu_css.js', array(), null, true);
+        wp_enqueue_style('hmuAdminCss', plugins_url() . '/hmu-ajax-filter/assets/hmu-admin.css', array(), '1.0.1');
+        wp_enqueue_style('hmuAdminStyleCss', plugins_url() . '/hmu-ajax-filter/assets/hmu.custom_css.css', array(), '1.0.1');
+        wp_enqueue_script('aceJs', plugins_url() . '/hmu-ajax-filter/assets/ace/ace.js', array(), null, true);
+        wp_enqueue_script('hmuCssJs', plugins_url() . '/hmu-ajax-filter/assets/hmu_css.js', array(), null, true);
     }
 }

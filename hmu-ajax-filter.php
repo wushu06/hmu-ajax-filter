@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Hook Me Up Woo Filter
+Plugin Name: Hook Me Up Ajax Filter
 Plugin URI:  http://ukcoding.com
 Description: import/export woocommerce products using rest api
 Version:     1.0.0
@@ -27,16 +27,16 @@ use Inc\Base\Activate;
 use Inc\Base\Deactivate;
 
 
-function hmu_woo_filter_activate()
+function hmu_ajax_filter_activate()
 {
     Activate::activate();
 }
-function hmu_woo_filter_deactivate()
+function hmu_ajax_filter_deactivate()
 {
     Deactivate::deactivate();
 }
-register_activation_hook(__FILE__, 'hmu_woo_filter_activate');
-register_deactivation_hook(__FILE__, 'hmu_woo_filter_deactivate');
+register_activation_hook(__FILE__, 'hmu_ajax_filter_activate');
+register_deactivation_hook(__FILE__, 'hmu_ajax_filter_deactivate');
 
 
 if (class_exists('Inc\\Init')) {

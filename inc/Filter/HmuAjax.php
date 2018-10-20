@@ -22,9 +22,15 @@ class HmuAjax
             if (!wp_verify_nonce($nonce, 'ajax-nonce')) {
                 die('Busted!');
             }
+            $cpt = 'product';
+            $template = 'woocommerce/content-product';
+            if ($dashboard = get_option('hmu_dashboard')) {
+                $template = array_key_exists('hmu_template', $dashboard)  ? $dashboard['hmu_template'] : 'woocommerce/content-product';
+
+            }
 
             $args = array(
-                'post_type' => 'product',
+                'post_type' => $cpt,
                 'posts_per_page' => -1,
                 'orderby' => array(
                     'ID' => 'DESC',
@@ -51,10 +57,6 @@ class HmuAjax
 
             }
 
-            /* for debugging */
-            /*echo '<pre>';
-            var_dump($args);
-            echo '</pre>';*/
 
             /* when using namespace dont forget to add \ to WP_Query */
             $query = new \WP_Query($args);
@@ -62,7 +64,7 @@ class HmuAjax
                 while ($query->have_posts()) {
                     $query->the_post();
 
-                    get_template_part('woocommerce/content', 'product');
+                    get_template_part($template);
 
                 }
                 wp_reset_postdata();
