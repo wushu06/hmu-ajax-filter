@@ -6,15 +6,12 @@ use \Inc\Base\BaseController;
 
 use \Inc\Api\SettingsApi;
 
-use \Inc\Api\Callbacks\AdminCallbacks;
-
 use \Inc\Api\Callbacks\FieldsCallbacks;
 
-class Admin extends BaseController
+class Fields extends BaseController
 {
 
     public $settings;
-	public $admin_callbacks;
 	public $fields_callbacks;
     public $pages = array();
 	public $subpages = array();
@@ -22,61 +19,23 @@ class Admin extends BaseController
    
 
     function register() {
-		
+
+               // add_action('admin_menu', array($this, 'register_my_custom_submenu_page' ));
 
 	        	$this->settings = new SettingsApi();
-		
-				$this->admin_callbacks = new AdminCallbacks();
 				$this->fields_callbacks = new FieldsCallbacks();
-		
-				$this->set_pages();
-		
-				$this->setSubpages();
+
 		
 				$this->setSettings();
 				$this->setSections();
 				$this->setFields();
 		
-				$this->settings->add_pages( $this->pages )->withSubPage( 'Dashboard' )->addSubPages( $this->subpages )->register();
+				$this->settings->register();
 
 				
     }
 
-    /*
-    * create menu 
-    */
-        
-    function set_pages () {
-        $this->pages = array(
-            array(
-                    'page_title' => 'Hook Me Up', 
-                    'menu_title' => 'Hook Me Up', 
-                    'capability' => 'manage_options', 
-                    'menu_slug' => 'hmu_woo_filter',
-                    'callback' => array( $this->admin_callbacks, 'hmu_woo_filter' ),
-                    'icon_url'           => 'dashicons-media-archive',
-                    'position' => 110
-                )
-            );
-  
-    
 
-	}
-	public function setSubpages()
-	{
-		foreach ($this->subpagesOutput as $slug => $title_callback) {
-			    $this->subpages[] = array (
-				'parent_slug' => 'hmu_woo_filter',
-				'page_title' => $title_callback[0], 
-				'menu_title' => $title_callback[0], 
-				'capability' => 'manage_options', 
-				'menu_slug' => $slug, 
-				'callback' => array( $this->admin_callbacks, $title_callback[1] ), 
-			);
-
-		}
-
-	}
     /*
     * create fields
     */

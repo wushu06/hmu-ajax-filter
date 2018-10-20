@@ -1,17 +1,20 @@
+.block--shop_filter {
+    width: 100%;
+    max-width: 400px;
+}
 .taxonomy-label {
-    width: 150px;
-    display: inline-block;
+
 }
 .tax-children {
-   padding-left: 30px;
-    width: 100%;
-    max-width: 270px;
+
+    margin-top: 10px;
+    width: 95%;
+    margin-left: 5%;
     margin-bottom: 10px;
 }
 .tax-parent {
     margin-bottom: 20px;
-    width: 100%;
-    max-width: 300px;
+
 
 }
 .tax-children input, .tax-parent input {

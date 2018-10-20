@@ -23,7 +23,11 @@ class BaseController
         $this->plugin_path = SITE_ROOT.'/';
         $this->plugin_url = plugins_url().'/hook-me-up/';
 
+
         $this->subpagesOutput = array(
+
+            'hmu_woo_filter' =>
+                array('Hmu woo filter', 'hmu_filter_callback'),
 
         );
 
@@ -34,7 +38,7 @@ class BaseController
 
     }
 
-    function seoUrl($string) {
+    public static function seoUrl($string) {
         //Lower case everything
         $string = strtolower($string);
         //Make alphanumeric (removes all other characters)

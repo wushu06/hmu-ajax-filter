@@ -3,8 +3,9 @@
 use Inc\Base\BaseController;
 use Inc\Filter\HmuCategoryFilter;
 
+
 ?>
-<h1><?php echo esc_html(get_admin_page_title()); ?> Woo Filter</h1>
+<h1><?php echo esc_html(get_admin_page_title()); ?> </h1>
 
 <div class="wrap">
     <?php settings_errors(); ?>
@@ -94,8 +95,9 @@ if ($dashboard = get_option('hmu_dashboard')) {
 
             }
             foreach ($taxonomy_objects as $tax) {
-                echo '<label class="taxonomy-label parent-label">' . $tax . '</label>';
-                echo '<input type="checkbox" name="parent" class="parent-checkbox" data-class="'.$tax.'" >';
+                echo '<div class="wrapper '.$tax.'-wrapper">';
+                echo '<div class="tax-parent"><label class="taxonomy-label parent-label"><strong>' . $tax . '</strong></label>';
+                echo '<input type="checkbox" name="parent" class="parent-checkbox" data-class="'.$tax.'" ></div>';
                 $terms = get_terms($tax, 'orderby=count&hide_empty=1');
                 if (!empty($terms) && !is_wp_error($terms)) {
                     foreach ($terms as $term) {
@@ -130,7 +132,7 @@ if ($dashboard = get_option('hmu_dashboard')) {
                                         <label class="taxonomy-label" for=""><?php echo $childterm->name; ?></label>
                                         <input
                                                 id=""
-                                                class="taxonomy-checkbox"
+                                                class="<?php echo $tax; ?> taxonomy-checkbox"
                                                 type="checkbox"
                                                 data-value=" <?php echo $childterm->term_id; ?> "
                                                 name="<?php echo $this->seoUrl($term->name) . '[' . $this->seoUrl($childterm->name) . ']'; ?>"
@@ -149,9 +151,12 @@ if ($dashboard = get_option('hmu_dashboard')) {
                                 }
                             } ?>
                         </div>
+
                         <?php
                     }
+
                 }
+                echo ' </div>';
             } ?>
 
 
@@ -159,7 +164,7 @@ if ($dashboard = get_option('hmu_dashboard')) {
         </form>
 
 
-    </div>
+    </form>
     <div class="hmu_delete_wrapper">
         <a class="hmu_delete" href="<?php echo esc_url(admin_url('admin.php?page=hmu_woo_filter&reset=true')); ?>">Reset to default</a>
 

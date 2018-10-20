@@ -2,7 +2,8 @@
 
 namespace Inc;
 
-use Inc\Pages\Admin;
+use Inc\Pages\Fields;
+use Inc\Pages\Menu;
 use Inc\Base\Enqueue;
 use Inc\Filter\HmuShortcode;
 
@@ -14,7 +15,8 @@ final class Init {
 
 
         return [
-            new Admin(),
+            new Fields(),
+            new Menu(),
             new Enqueue(),
             new HmuShortcode()
 

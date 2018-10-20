@@ -152,7 +152,7 @@ class HmuAllTaxonomies extends BaseController
                         endif; // check key in option
                         endif; // hide parent
                         foreach (array_count_values($b) as $child => $count) {
-                            if (in_array($this->seoUrl($child), $new_option_values) ) :
+                            if (in_array(self::seoUrl($child), $new_option_values) ) :
                              ?>
                             <div class="hmu-container hmu-term-container">
                                 <div class="hmu-row">
@@ -170,9 +170,9 @@ class HmuAllTaxonomies extends BaseController
                                                 type="checkbox"
                                                 value="<?php ?>"
                                                 data-term-tax="<?php echo $key ?>"
-                                                data-term-slug="<?php echo $this->seoUrl($child); ?>"
+                                                data-term-slug="<?php echo self::seoUrl($child); ?>"
                                                 data-term="<?php echo $child; ?>"
-                                                class="hmu-<?php echo $this->seoUrl($key) ?> hmu_filter_attributes"
+                                                class="hmu-<?php echo self::seoUrl($key) ?> hmu_filter_attributes"
                                                 data-archive-tax="<?php echo is_shop() ? '' : $taxonomy ?>"
                                                 data-archive-term="<?php echo is_shop() ? '' : $obj_slug ?>"
                                         />
