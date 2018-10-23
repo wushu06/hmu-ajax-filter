@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * FieldsCallbacks class handles fields callbacks and sanitization
+ *
+ * @package   hmu-ajax-filter
+ * @author    Another Author <nourleeds@yahoo.co.uk>
+ * @copyright 2018 Noureddine Latreche
+ * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
+ * @version   CVS: 1.0.0
+ * @link      Null
+ */
+
 namespace Inc\Api\Callbacks;
 
 use \Inc\Base\BaseController;
@@ -7,9 +18,8 @@ use \Inc\Base\BaseController;
 class FieldsCallbacks extends BaseController
 {
 
-        public function sanitizeCallback($options)
+    public function sanitizeCallback($options)
     {
-
     }
 
     public function adminSectionManager()
@@ -26,17 +36,6 @@ class FieldsCallbacks extends BaseController
     {
     }
 
-    public function hmuTemplate($args)
-    {
-        $name = $args['label_for'];
-        $classes = $args['class'];
-        $option_name = $args['option_name'];
-        $value = get_option($option_name);
-        $isvalue = isset($value[$name]) ? $value[$name] : '';
-        echo '<input type="text" class="regular-text hmu-input" name="' . $option_name . '[' . $name . ']"  value="' . $isvalue . '"  placeholder="Default is woocommerce content-product">';
-    }
-
-
     public function hmuWrapperID($args)
     {
         $name = $args['label_for'];
@@ -44,7 +43,7 @@ class FieldsCallbacks extends BaseController
         $option_name = $args['option_name'];
         $value = get_option($option_name);
         $isvalue = isset($value[$name]) ? $value[$name] : '';
-        echo '<input type="text" class="regular-text hmu-input" name="' . $option_name . '[' . $name . ']"  value="' . $isvalue . '"  placeholder="id attribute wrapping the products list">';
+        echo '<input type="text" class="regular-text hmu-input" name="' . $option_name . '[' . $name . ']"  value="' . $isvalue . '"  placeholder="class or id wrapping the products list">';
     }
 
     public function hmuCustomClass($args)
@@ -87,7 +86,22 @@ class FieldsCallbacks extends BaseController
                 </label></div>';
     }
 
-    public function sunset_custom_css_callback($args)
+    public function hmuRemoveLoader($args)
+    {
+
+        $name = $args['label_for'];
+        $classes = $args['class'];
+        $option_name = $args['option_name'];
+        $checkbox = get_option($option_name);
+        $checked = isset($checkbox[$name]) ? ($checkbox[$name] ? true : false) : false;
+
+        echo '<div id="toggles">
+                <input id="hmuHideLoader" class="ios-toggle" type="checkbox" name="' . $option_name . '[' . $name . ']" value="1"   ' . ($checked ? "checked" : "") . '>
+                <label for="hmuHideLoader" class="checkbox-label" data-off="off" data-on="on">
+                </label></div>';
+    }
+
+    public function hmuCssCallback($args)
     {
         $name = $args['label_for'];
         $classes = $args['class'];

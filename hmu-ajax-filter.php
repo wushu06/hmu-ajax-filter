@@ -2,7 +2,7 @@
 /*
 Plugin Name: Hook Me Up Ajax Filter
 Plugin URI:  http://ukcoding.com
-Description: import/export woocommerce products using rest api
+Description: Ajax filter for woocommerce store
 Version:     1.0.0
 Author:      Noureddine Latreche
 Text Domain: Hook Me Up
@@ -24,8 +24,8 @@ if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
 }
 
 use Inc\Base\Activate;
-use Inc\Base\Deactivate;
 
+use Inc\Base\Deactivate;
 
 function hmu_ajax_filter_activate()
 {
@@ -40,5 +40,5 @@ register_deactivation_hook(__FILE__, 'hmu_ajax_filter_deactivate');
 
 
 if (class_exists('Inc\\Init')) {
-    Inc\Init::register_services();
+    Inc\Init::registerServices();
 }

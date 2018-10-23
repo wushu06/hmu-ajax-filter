@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * Enqueue class handles the scripts and styles of the plugin
+ *
+ * @package   hmu-ajax-filter
+ * @author    Another Author <nourleeds@yahoo.co.uk>
+ * @copyright 2018 Noureddine Latreche
+ * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
+ * @version   CVS: 1.0.0
+ * @link      Null
+ */
+
 namespace Inc\Base;
 
 use Inc\Base\BaseController;
@@ -9,11 +20,11 @@ class Enqueue extends BaseController
 
     public function register()
     {
-        add_action('wp_enqueue_scripts', array($this, 'hmu_filter_scripts'));
-        add_action('admin_enqueue_scripts', array($this, 'hmu_admin_filter_scripts'));
+        add_action('wp_enqueue_scripts', array($this, 'hmuFilterScripts'));
+        add_action('admin_enqueue_scripts', array($this, 'hmuFilterAdminScripts'));
     }
 
-    public function hmu_filter_scripts()
+    public function hmuFilterScripts()
     {
         wp_enqueue_style('bootstrapCss', plugins_url() . '/hmu-ajax-filter/assets/bootstrap.min.css', array(), '1.0.1');
         wp_enqueue_style('hmuCss', plugins_url() . '/hmu-ajax-filter/assets/filter.css', array(), '1.0.1');
@@ -21,7 +32,8 @@ class Enqueue extends BaseController
 
         $id = '';
         if ($dashboard_option = get_option('hmu_dashboard')) {
-            $id = $dashboard_option["wrapper_id"];
+            $id = array_key_exists('wrapper_id', $dashboard_option)
+                ?  $dashboard_option["wrapper_id"] : 'container';
         }
 
             // $translation_array = array('adminAjax' => admin_url('admin-ajax.php'));
@@ -32,7 +44,7 @@ class Enqueue extends BaseController
         ));
     }
 
-    public function hmu_admin_filter_scripts($hook)
+    public function hmuFilterAdminScripts($hook)
     {
         if ($hook != 'toplevel_page_hmu_ajax_filter') {
             return;

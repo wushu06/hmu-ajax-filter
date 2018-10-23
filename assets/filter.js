@@ -54,6 +54,15 @@ jQuery(document).ready(function ($) {
        // console.log($(this).attr('data-attr'));
     });
 
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
 
     // function to parse the url and retreive all params
     var getParams = function (url) {
@@ -74,7 +83,7 @@ jQuery(document).ready(function ($) {
     };
 
 
-    function initAjax(archiveTax = '', archiveTerm = ''){
+    function initAjax(archiveTax = '', archiveTerm = '', check = false){
         // Get parameters from the current URL
         let href = getParams(window.location.href);
         //console.log(href);
@@ -95,7 +104,12 @@ jQuery(document).ready(function ($) {
         });
         if(href === ''){
            // console.log('no ajax attr');
-            ajaxCall( href, false);
+            if(check){
+                ajaxCall( href, false);
+                ajaxCallTerms( href, false);
+
+            }
+
         }else{
             let archive = {archiveTerm}
 
@@ -106,9 +120,10 @@ jQuery(document).ready(function ($) {
 
                 }
             }
-            console.log(href)
+           // console.log(href)
 
             ajaxCall( href, true);
+            ajaxCallTerms( href, true);
             // add checked to relevant inputs
 
         }
@@ -135,14 +150,13 @@ jQuery(document).ready(function ($) {
         return newString;
     }
 
+    $(document).on('click', '.hmu_filter_attributes', function (e) {
 
-    $('.hmu_filter_attributes').on('click', function (e) {
       //  e.preventDefault();
         var location = window.location.href;
 
 
         if( $(this).is(':checked') ) {
-
 
             var termTax = $(this).attr('data-term-tax');
             var termId = $(this).attr('data-term');
@@ -179,7 +193,7 @@ jQuery(document).ready(function ($) {
             //   $(this).off("click").attr('data-url', termHref).attr('href', "javascript: void(0);").addClass('active');
             $(this).parent().siblings().addClass('hmu-active');
 
-
+            initAjax(archiveTax , archiveTerm);
         }else {
             var termTax = $(this).attr('data-term-tax');
             var termId = $(this).attr('data-term');
@@ -191,14 +205,35 @@ jQuery(document).ready(function ($) {
                 //
             }
             $(this).parent().siblings().removeClass('hmu-active');
-
+            initAjax(archiveTax , archiveTerm, true);
 
         }
-        initAjax(archiveTax , archiveTerm);
+
     });
 
+            $(document).on('click', 'a.page-numbers', function (e) {
+                e.preventDefault();
+                let page = $(this).attr('href');
+                let location = window.location.href;
+               let value = getParameterByName('paged', page);
+               $(this).hide();
+               var newURL = queryStringUrlReplacement(window.location.href, 'page', value);
+
+                 window.history.pushState("", "", newURL);
+                 initAjax();
+            });
 
 
+
+   /* $(document).on('load', '#hmuPagination', function (e) {
+        e.preventDefault();
+        $(this).children('a').each(function () {
+            $(this).attr('dd');
+        });
+
+
+
+    });*/
 
 
     //function ajaxCall( slug, termTax,  term_relation, arg) {
@@ -207,16 +242,13 @@ jQuery(document).ready(function ($) {
         const adminAjax = ajax_var.url;
         const nonce = ajax_var.nonce;
         let wrapperID = ajax_var.wrapper_id;
-        console.log('#'+wrapperID);
+
 
         $.ajax({
             url: adminAjax ,
             data : {
                 action : 'customfilter',
                 nonce: nonce,
-                /*tax : termTax,
-                relation : term_relation,
-                term : slug,*/
                 attributes: href,
                 args : arg,
 
@@ -232,10 +264,55 @@ jQuery(document).ready(function ($) {
             success:function(data){
                 $('body').removeClass('load-ajax');
                 if(data =='') {
-                    console.log('empty');
+                    console.log('empty response');
                 }else {
 
-                    $('#'+wrapperID).empty().html(data);
+                   // console.log( $('#con').find('#hmuPagination')  );
+                    $('.woocommerce-pagination').replaceWith($(data).find('#hmuPagination').show());
+                    $('.woocommerce-result-count').replaceWith($(data).find('#hmuCount').show());
+                    $(wrapperID).empty().html( $(data));
+
+
+
+                }
+
+
+                // $('#lazyload').empty();
+            }
+        });
+    }
+
+    function ajaxCallTerms( href,  arg) {
+
+        const adminAjax = ajax_var.url;
+        const nonce = ajax_var.nonce;
+        let wrapperID = ajax_var.wrapper_id;
+
+        $.ajax({
+            url: adminAjax ,
+            data : {
+                action : 'hmuTerms',
+                nonce: nonce,
+                attributes: href,
+                args : arg,
+
+            },
+            type:'POST', // POST
+            beforeSend:function(xhr){
+                $('body').addClass('load-ajax');
+            },
+            error:function (data) {
+                $('body').removeClass('load-ajax');
+                console.log('ERROR');
+            },
+            success:function(data){
+                $('body').removeClass('load-ajax');
+                if(data == '') {
+                    console.log('empty');
+                }else {
+                   // console.log(data);
+                    $('.hmu-filter-ajax').empty().html(data);
+
                 }
 
 

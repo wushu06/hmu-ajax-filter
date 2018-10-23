@@ -1,24 +1,37 @@
 <?php
+
+/**
+ * Menu class defines the menu page and subpages
+ *
+ * @package   hmu-ajax-filter
+ * @author    Another Author <nourleeds@yahoo.co.uk>
+ * @copyright 2018 Noureddine Latreche
+ * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
+ * @version   CVS: 1.0.0
+ * @link      Null
+ */
+
+
 namespace Inc\Pages;
+
 use Inc\Base\BaseController;
 
 class Menu extends BaseController
 {
     public function register()
     {
-        add_action('admin_menu', array($this, 'hmu_ajax_filter_pages'));
-
-
+        add_action('admin_menu', array($this, 'hmuAjaxFilterPages'));
     }
-    public  function hmu_ajax_filter_pages() {
+    public function hmuAjaxFilterPages()
+    {
         add_menu_page(
-            'Hmu ajax filter',// the page title
-            'Filter',//menu title
-            'manage_options',//capability
-            'hmu_ajax_filter',//menu slug/handle this is what you need!!!
-            array($this, 'my_custom_menu_page_callback'), // callback
-            'dashicons-networking',//icon_url,
-            '50'//position
+            'Hmu ajax filter',
+            'Filter',
+            'manage_options',
+            'hmu_ajax_filter',
+            array($this, 'hmuMenuCallback'),
+            'dashicons-networking',
+            '50'
         );
         add_submenu_page(
             'hmu_ajax_filter',
@@ -26,16 +39,16 @@ class Menu extends BaseController
             'Hmu filter',
             'manage_options',
             'hmu_ajax_filter',
-            array($this, 'my_custom_submenu_page_callback')
+            array($this, 'hmuSubMenuCallback')
         );
     }
-    public function my_custom_menu_page_callback() {
-        require_once( $this->plugin_path."/template/dashboard.php" );
-
+    public function hmuMenuCallback()
+    {
+        require_once($this->plugin_path."/template/dashboard.php");
     }
 
-    public function my_custom_submenu_page_callback() {
-        require_once( $this->plugin_path."/template/dashboard.php" );
-
+    public function hmuSubMenuCallback()
+    {
+        require_once($this->plugin_path."/template/dashboard.php");
     }
 }
