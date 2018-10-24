@@ -70,6 +70,20 @@ class FieldsCallbacks extends BaseController
                         <label for="hmuCheckbox" class="checkbox-label" data-off="off" data-on="on">
                         </label></div>';
     }
+    public function hmuSelectBox($args)
+    {
+
+        $name = $args['label_for'];
+        $classes = $args['class'];
+        $option_name = $args['option_name'];
+        $checkbox = get_option($option_name);
+        $checked = isset($checkbox[$name]) ? ($checkbox[$name] ? true : false) : false;
+
+        echo '<div id="toggles">
+                        <input id="hmuCheckbox" class="ios-toggle" type="checkbox" name="' . $option_name . '[' . $name . ']" value="1"   ' . ($checked ? "checked" : "") . '>
+                        <label for="hmuCheckbox" class="checkbox-label" data-off="off" data-on="on">
+                        </label></div>';
+    }
 
     public function hmuHideParents($args)
     {

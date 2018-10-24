@@ -86,22 +86,12 @@ jQuery(document).ready(function ($) {
     function initAjax(archiveTax = '', archiveTerm = '', check = false){
         // Get parameters from the current URL
         let href = getParams(window.location.href);
-        //console.log(href);
 
-        let attributes,
-            values = [];
-        //loop through the returned obj
-        Object.keys(href).forEach(function(key) {
-             attributes = key;
-             values[attributes] = [href[key]];
-            $('.hmu_filter_attributes').each(function () {
-               let term = $(this).attr('data-term');
-               if(term == href[key]){
-                   $(this).attr("checked", "checked");
-               }
-            });
-            //ajaxCall( values, attributes,  'recyclable-waste', true);
-        });
+        if(check){
+            ajaxCall( href, false);
+            ajaxCallTerms( href, false);
+
+        }
         if(href === ''){
            // console.log('no ajax attr');
             if(check){
@@ -120,7 +110,6 @@ jQuery(document).ready(function ($) {
 
                 }
             }
-           // console.log(href)
 
             ajaxCall( href, true);
             ajaxCallTerms( href, true);
@@ -198,14 +187,18 @@ jQuery(document).ready(function ($) {
             var termTax = $(this).attr('data-term-tax');
             var termId = $(this).attr('data-term');
             var termSlug = $(this).attr('data-term-slug');
+            var archiveTax = $(this).attr('data-archive-tax');
+            var archiveTerm = $(this).attr('data-archive-term');
+
             if (location.indexOf(termTax) != -1) {
                 var newURL = removeURLParameter(location, termTax)
                 window.history.pushState("", "", newURL);
 
                 //
             }
+
             $(this).parent().siblings().removeClass('hmu-active');
-            initAjax(archiveTax , archiveTerm, true);
+            initAjax('','', true);
 
         }
 
@@ -225,17 +218,6 @@ jQuery(document).ready(function ($) {
 
 
 
-   /* $(document).on('load', '#hmuPagination', function (e) {
-        e.preventDefault();
-        $(this).children('a').each(function () {
-            $(this).attr('dd');
-        });
-
-
-
-    });*/
-
-
     //function ajaxCall( slug, termTax,  term_relation, arg) {
     function ajaxCall( href,  arg) {
 
@@ -245,6 +227,31 @@ jQuery(document).ready(function ($) {
 
 
         $.ajax({
+            xhr: function () {
+                var xhr = new window.XMLHttpRequest();
+                xhr.upload.addEventListener("progress", function (evt) {
+                    if (evt.lengthComputable) {
+                        var percentComplete = evt.loaded / evt.total;
+                        console.log(percentComplete);
+                        $('.hmu-loader').css({
+                            width: percentComplete * 100 + '%'
+                        });
+                        if (percentComplete === 1) {
+                            $('.hmu-loader').addClass('hide');
+                        }
+                    }
+                }, false);
+                xhr.addEventListener("progress", function (evt) {
+                    if (evt.lengthComputable) {
+                        var percentComplete = evt.loaded / evt.total;
+                        console.log(percentComplete);
+                        $('.hmu-loader').css({
+                            width: percentComplete * 100 + '%'
+                        });
+                    }
+                }, false);
+                return xhr;
+            },
             url: adminAjax ,
             data : {
                 action : 'customfilter',
@@ -312,6 +319,22 @@ jQuery(document).ready(function ($) {
                 }else {
                    // console.log(data);
                     $('.hmu-filter-ajax').empty().html(data);
+                    var href = getParams(window.location.href);
+
+                    let attributes,
+                        values = [];
+                    //loop through the returned obj
+                    Object.keys(href).forEach(function(key) {
+                        attributes = key;
+                        values[attributes] = [href[key]];
+
+                        $('.hmu_filter_attributes').each(function () {
+                            let term = $(this).attr('data-term-slug');
+                            if(term == href[key]){
+                                $(this).attr("checked", "checked");
+                            }
+                        });
+                    });
 
                 }
 

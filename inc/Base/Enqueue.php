@@ -31,16 +31,20 @@ class Enqueue extends BaseController
         wp_enqueue_script('hmuJs', plugins_url() . '/hmu-ajax-filter/assets/filter.js', array(), null, true);
 
         $id = '';
+        $select = '';
         if ($dashboard_option = get_option('hmu_dashboard')) {
             $id = array_key_exists('wrapper_id', $dashboard_option)
                 ?  $dashboard_option["wrapper_id"] : 'container';
+            $select = array_key_exists('use_select', $dashboard_option)
+                ?  $dashboard_option["use_select"] : '';
         }
 
             // $translation_array = array('adminAjax' => admin_url('admin-ajax.php'));
         wp_localize_script('hmuJs', 'ajax_var', array(
             'url' => admin_url('admin-ajax.php'),
             'nonce' => wp_create_nonce('ajax-nonce'),
-            'wrapper_id' => $id
+            'wrapper_id' => $id,
+            'select' => $select
         ));
     }
 

@@ -75,7 +75,7 @@ class Fields extends BaseController
             // ID
             //0- title 1- callback 2-page 3- section 4- option name 5-input type
             'wrapper_id' =>
-                array('Products wrapper id or class',
+                array('Products wrapper #id or .class',
                     'hmuWrapperID',
                     'hmu_ajax_filter',
                     'hmu_dashboard_index',
@@ -84,6 +84,13 @@ class Fields extends BaseController
             'custom_class' =>
                 array('class attribute',
                     'hmuCustomCLass',
+                    'hmu_ajax_filter',
+                    'hmu_dashboard_index',
+                    'hmu_dashboard',
+                ),
+            'use_select' =>
+                array('Use select box',
+                    'hmuSelectBox',
                     'hmu_ajax_filter',
                     'hmu_dashboard_index',
                     'hmu_dashboard',

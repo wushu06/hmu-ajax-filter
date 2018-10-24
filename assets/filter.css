@@ -66,55 +66,19 @@
  */
 
 .hmu-loader{
-    display: none;
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    position: absolute;
-    margin: 0 auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-#hmuloader-2 span{
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    background-color: #3498db;
-    margin: 35px 5px;
-}
-
-#hmuloader-2 span:nth-child(1){
-    animation: bounce 1s ease-in-out infinite;
-}
-
-#hmuloader-2 span:nth-child(2){
-    animation: bounce 1s ease-in-out 0.33s infinite;
-}
-
-#hmuloader-2 span:nth-child(3){
-    animation: bounce 1s ease-in-out 0.66s infinite;
-}
-
-@keyframes bounce{
-    0%, 75%, 100%{
-        -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-        -o-transform: translateY(0);
-        transform: translateY(0);
-    }
-
-    25%{
-        -webkit-transform: translateY(-20px);
-        -ms-transform: translateY(-20px);
-        -o-transform: translateY(-20px);
-        transform: translateY(-20px);
-    }
-}
-.load-ajax .hmu-loader {
     display: block;
+    width: 0;
+    height: 3px;
+    position: fixed;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    background: red;
+    z-index: 999999;
+    transition: width .3s;
 }
-.load-ajax .hmu-container {
-    opacity: 0.7;
+
+.hmu-loader.hide {
+    opacity: 0;
+    transition: opacity 1.3s;
 }

@@ -127,12 +127,15 @@ class HmuAllTaxonomies extends BaseController
         $checkbox = '0';
         $hide_parent = '0';
         $custom_css = '';
-
+        $removeLoader = '1';
+        $select = '';
         if ($dashboard = get_option('hmu_dashboard')) {
             $checkbox = array_key_exists('use_checkbox', $dashboard)  ? $dashboard['use_checkbox'] : '0';
             $hide_parent = array_key_exists('hide_parent', $dashboard) ? $dashboard['hide_parent'] : '0' ;
             $custom_css = array_key_exists('custom-css', $dashboard) ? $dashboard['custom-css'] : '' ;
             $removeLoader = array_key_exists('remove_loader', $dashboard) ? $dashboard['remove_loader'] : '' ;
+            $select = array_key_exists('use_select', $dashboard)
+                ?  $dashboard["use_select"] : '';
             //  var_dump($dashboard);
         }
         echo '<div class="hmu-filter-ajax">';
@@ -144,13 +147,13 @@ class HmuAllTaxonomies extends BaseController
 
 
         if (!empty($taxonomies)) : ?>
+        <?php if($select == '') : ?>
             <div class="hmu-filter">
                 <div class="block--shop_filter_attributes" id="hmuFilter">
                     <?php if ($removeLoader == '') { ?>
+
                     <div class="hmu-loader" id="hmuloader-2">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+
                     </div>
                     <?php } ?>
                     <?php
@@ -208,12 +211,15 @@ class HmuAllTaxonomies extends BaseController
             </div>
 
              <?php
+            else :
+            echo 'select';
+            endif;
+            else :
+                echo 'No categories found';
+            endif;
 
-        else :
-            echo 'No categories found';
-        endif;
+            echo '</div>';
 
-        echo '</div>';
       
 
     }

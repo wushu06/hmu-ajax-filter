@@ -38,12 +38,14 @@ class HmuAjax extends BaseController
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         if (array_key_exists('page', $_POST['attributes'])) {
             $paged = $_POST['attributes']['page'];
+            unset($_POST['attributes']['page']);
         }
-        unset($_POST['attributes']['page']);
+
+
 
         $args = array(
             'post_type' => $cpt,
-            'posts_per_page' => 2,
+            'posts_per_page' => -1,
             'paged' => $paged,
             'orderby' => array(
                 'ID' => 'DESC',
@@ -68,7 +70,9 @@ class HmuAjax extends BaseController
             );
 
         }
+
         return $args;
+
 
     }
 
