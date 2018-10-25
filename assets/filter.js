@@ -203,6 +203,43 @@ jQuery(document).ready(function ($) {
         }
 
     });
+    
+      /*$(document).on('change', '.hmu_filter_attributes', function (e) {
+
+      //  e.preventDefault();
+        var location = window.location.href;
+
+
+
+            var termTax = $(this).find(":selected").attr('data-term-tax');
+            var termId = $(this).find(":selected").attr('data-term');
+            var termSlug = $(this).find(":selected").attr('data-term-slug');
+            var archiveTax = $(this).find(":selected").attr('data-archive-tax');
+            var archiveTerm = $(this).find(":selected").attr('data-archive-term');
+           // var termHref = $(this).find(":checked").attr('href');
+           // console.log(archiveTax + archiveTerm);
+
+            if (location.indexOf(termTax) != -1) {
+                //console.log(queryStringUrlReplacement(window.location.href, termTax, termSlug));
+                var newURL = queryStringUrlReplacement(window.location.href, termTax, termSlug);
+                window.history.pushState("", "", newURL);
+                //
+            } else {
+                if (location.indexOf('?') != -1)
+                    window.history.pushState("", "", location + '&' + termTax + '=' + termSlug);
+
+                else
+                    window.history.pushState("", "", location + '?' + termTax + '=' + termSlug);
+
+            }
+
+
+
+
+            initAjax(archiveTax , archiveTerm);
+
+
+    });*/
 
             $(document).on('click', 'a.page-numbers', function (e) {
                 e.preventDefault();
