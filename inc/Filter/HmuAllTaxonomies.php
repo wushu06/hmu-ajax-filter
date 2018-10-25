@@ -213,9 +213,54 @@ class HmuAllTaxonomies extends BaseController
             </div>
 
              <?php
-            else :
-            echo 'select';
-            endif;
+            else : ?>
+             <div class="hmu-filter">
+                <div class="block--shop_filter_attributes " id="hmuFilter">
+                    <?php if ($removeLoader == '') { ?>
+                    <div class="hmu-loader" id="hmuloader-2">
+
+                    </div>
+                    <?php } ?>
+                    <?php
+                    foreach ($taxonomies as $key => $b) {
+                        ?>
+                        <?php
+                        if ($hide_parent == '0') :
+                            if (in_array($key, $option_keys)) :
+                                echo '<div class="col"><div class="custom-select">
+                                      <select class="hmu_filter_attributes">
+                                      <option>' . $key . '</option>
+                                      ';
+                            endif; // check key in option
+                        endif; // hide parent
+                        foreach (array_count_values($b) as $child => $count) {
+                            if (in_array(self::seoUrl($child), $new_option_values)) :
+                                ?>
+
+
+                                        <option
+                                                id="<?php echo $child; ?>"
+                                                type="checkbox"
+                                                value="<?php ?>"
+                                                data-term-tax="<?php echo $key ?>"
+                                                data-term-slug="<?php echo self::seoUrl($child); ?>"
+                                                data-term="<?php echo $child; ?>"
+                                                class="hmu-<?php echo self::seoUrl($key) ?> hmu_filter_attributes"
+                                                data-archive-tax="<?php echo is_shop() ? '' : $taxonomy ?>"
+                                                data-archive-term="<?php echo is_shop() ? '' : $obj_slug ?>"
+                                        >
+                                            <?php echo $child; ?>(<?php echo $count; ?>)
+                                        </option>
+
+                                <?php
+                            endif; // check for child in option
+                        }
+                        echo '</select></div></div>';
+                    }
+                    ?>
+                </div>
+            </div>
+            <?php endif;
             else :
                 echo 'No categories found';
             endif;
