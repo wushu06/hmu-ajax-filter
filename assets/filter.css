@@ -23,6 +23,13 @@
     max-width: 50px;
     width: 100%;
 }
+.hmu_select_wrapper {
+    height: 50px;
+    margin: 30px auto;
+}
+.hmu_select_wrapper select {
+    margin-bottom: 30px;
+}
 .hmucol-md-10 {
     -ms-flex: 0 0 83.333333%;
     flex: 0 0 83.333333%;

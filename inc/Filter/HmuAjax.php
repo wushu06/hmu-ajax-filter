@@ -12,6 +12,7 @@
  */
 
 namespace Inc\Filter;
+
 use Inc\Filter\HmuAllTaxonomies;
 use Inc\Base\BaseController;
 
@@ -68,12 +69,8 @@ class HmuAjax extends BaseController
                 'relation' => 'AND',
                 $result
             );
-
         }
-
         return $args;
-
-
     }
 
     public function hmuAjaxCall()
@@ -88,11 +85,8 @@ class HmuAjax extends BaseController
             if ($query->have_posts()) :
                 while ($query->have_posts()) {
                     $query->the_post();
-
                     wc_get_template_part('content', 'product');
-
                 }
-
                 ?>
                 <p class="woocommerce-result-count" id="hmuCount" style="display:none;">
                     <?php
@@ -104,17 +98,28 @@ class HmuAjax extends BaseController
 
                     if ($total <= $per_page || -1 === $per_page) {
                         /* translators: %d: total results */
-                        printf(_n('Showing the single result', 'Showing all %d results', $total, 'woocommerce'),
-                            $total);
+                        printf(
+                            _n('Showing the single result', 'Showing all %d results', $total, 'woocommerce'),
+                            $total
+                        );
                     } else {
                         /* translators: 1: first result 2: last result 3: total results */
-                        printf(_nx('Showing the single result', 'Showing %1$d&ndash;%2$d of %3$d results', $total,
-                            'with first and last result', 'woocommerce'), $first, $last, $total);
+                        printf(
+                            nx(
+                                'Showing the single result',
+                                'Showing %1$d&ndash;%2$d of %3$d results',
+                                $total,
+                                'with first and last result',
+                                'woocommerce'
+                            ),
+                            $first,
+                            $last,
+                            $total
+                        );
                     }
                     ?>
                 </p>
                 <?php if ($query->max_num_pages > 1) : ?>
-
                 <nav class="woocommerce-pagination" id="hmuPagination" style="display: none">
                     <?php
                     echo paginate_links(array(
@@ -131,7 +136,7 @@ class HmuAjax extends BaseController
                     ));
                     ?>
                 </nav>
-            <?php endif; ?>
+                <?php endif; ?>
                 <?php
                 wp_reset_postdata();
             else :
@@ -142,12 +147,8 @@ class HmuAjax extends BaseController
 
             ?>
         </div>
-
-
         <?php
-
     }
-
 
     public function hmuTermsAjaxCall()
     {
@@ -157,6 +158,5 @@ class HmuAjax extends BaseController
 
         $allTax->hmuTaxonomyOptionToHtml($result);
         die();
-
     }
 }

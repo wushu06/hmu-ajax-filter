@@ -204,7 +204,7 @@ jQuery(document).ready(function ($) {
 
     });
     
-      /*$(document).on('change', '.hmu_filter_attributes', function (e) {
+      $(document).on('change', '.hmu_filter_select', function (e) {
 
       //  e.preventDefault();
         var location = window.location.href;
@@ -239,7 +239,7 @@ jQuery(document).ready(function ($) {
             initAjax(archiveTax , archiveTerm);
 
 
-    });*/
+    });
 
             $(document).on('click', 'a.page-numbers', function (e) {
                 e.preventDefault();

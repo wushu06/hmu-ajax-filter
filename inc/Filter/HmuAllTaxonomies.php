@@ -54,13 +54,13 @@ class HmuAllTaxonomies extends BaseController
         wp_reset_postdata();
 
         $result = array();
-         if(isset($unique_terms)) {
+        if (isset($unique_terms)) {
             foreach ($unique_terms as $key => $unique_term) {
                 foreach ($unique_term as $term) {
                     $result [$term->taxonomy][] = $term->name;
                 }
             }
-         }
+        }
 
         return $result;
     }
@@ -149,11 +149,10 @@ class HmuAllTaxonomies extends BaseController
 
 
         if (!empty($taxonomies)) : ?>
-        <?php if($select == '') : ?>
+            <?php if ($select == '') : ?>
             <div class="hmu-filter">
                 <div class="block--shop_filter_attributes" id="hmuFilter">
                     <?php if ($removeLoader == '') { ?>
-
                     <div class="hmu-loader" id="hmuloader-2">
 
                     </div>
@@ -211,10 +210,8 @@ class HmuAllTaxonomies extends BaseController
                     ?>
                 </div>
             </div>
-
-             <?php
-            else : ?>
-             <div class="hmu-filter">
+            <?php else : ?>
+             <div class="hmu-filter hmu_select_wrapper">
                 <div class="block--shop_filter_attributes " id="hmuFilter">
                     <?php if ($removeLoader == '') { ?>
                     <div class="hmu-loader" id="hmuloader-2">
@@ -222,13 +219,12 @@ class HmuAllTaxonomies extends BaseController
                     </div>
                     <?php } ?>
                     <?php
-                    foreach ($taxonomies as $key => $b) {
-                        ?>
+                    foreach ($taxonomies as $key => $b) { ?>
                         <?php
                         if ($hide_parent == '0') :
                             if (in_array($key, $option_keys)) :
-                                echo '<div class="col"><div class="custom-select">
-                                      <select class="hmu_filter_attributes">
+                                echo '
+                                      <select class="hmu_filter_select">
                                       <option>' . $key . '</option>
                                       ';
                             endif; // check key in option
@@ -255,19 +251,15 @@ class HmuAllTaxonomies extends BaseController
                                 <?php
                             endif; // check for child in option
                         }
-                        echo '</select></div></div>';
+                        echo '</select>';
                     }
                     ?>
                 </div>
             </div>
             <?php endif;
-            else :
+        else :
                 echo 'No categories found';
-            endif;
-
+        endif;
             echo '</div>';
-
-      
-
     }
 }

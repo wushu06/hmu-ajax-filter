@@ -4,12 +4,8 @@
     <list default="true" id="853c9e07-0e70-4332-bd9d-068bf85f8093" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/assets/filter.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/filter.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/filter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/Api/Callbacks/FieldsCallbacks.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Api/Callbacks/FieldsCallbacks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/Base/Enqueue.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Base/Enqueue.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/Filter/HmuAjax.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Filter/HmuAjax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/Filter/HmuAjaxTerms.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/Filter/HmuAllTaxonomies.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Filter/HmuAllTaxonomies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/Pages/Fields.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Pages/Fields.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,41 +19,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FieldsCallbacks.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/Api/Callbacks/FieldsCallbacks.php">
+      <file leaf-file-name="filter.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/filter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-461">
-              <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
-              <folding>
-                <element signature="n#style#0;n#textarea#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="455">
+              <caret line="206" column="43" selection-start-line="206" selection-start-column="43" selection-end-line="206" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HmuAllTaxonomies.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HmuAllTaxonomies.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/Filter/HmuAllTaxonomies.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="215" column="18" selection-start-line="215" selection-start-column="18" selection-end-line="215" selection-end-column="18" />
+            <state relative-caret-position="135">
+              <caret line="216" column="36" lean-forward="true" selection-start-line="216" selection-start-column="36" selection-end-line="216" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Fields.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/Pages/Fields.php">
+      <file leaf-file-name="filter.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/filter.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="90" column="13" lean-forward="true" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="22" />
+            <state relative-caret-position="300">
+              <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Enqueue.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/Base/Enqueue.php">
+      <file leaf-file-name="HmuAjax.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/inc/Filter/HmuAjax.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="38" selection-end-column="56" />
+            <state relative-caret-position="350">
+              <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
+              <folding>
+                <element signature="e#338#370#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,17 +142,18 @@
         <option value="$PROJECT_DIR$/inc/Init.php" />
         <option value="$PROJECT_DIR$/hmu-ajax-filter.php" />
         <option value="$PROJECT_DIR$/template/dashboard.php" />
-        <option value="$PROJECT_DIR$/inc/Filter/HmuAjax.php" />
-        <option value="$PROJECT_DIR$/assets/filter.js" />
-        <option value="$PROJECT_DIR$/assets/filter.js" />
-        <option value="$PROJECT_DIR$/assets/filter.css" />
-        <option value="$PROJECT_DIR$/assets/filter.css" />
         <option value="$PROJECT_DIR$/inc/Pages/Fields.php" />
         <option value="$PROJECT_DIR$/inc/Api/Callbacks/FieldsCallbacks.php" />
         <option value="$PROJECT_DIR$/inc/Api/Callbacks/FieldsCallbacks.php" />
         <option value="$PROJECT_DIR$/inc/Base/Enqueue.php" />
+        <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/inc/Filter/HmuAllTaxonomies.php" />
         <option value="$PROJECT_DIR$/inc/Filter/HmuAllTaxonomies.php" />
+        <option value="$PROJECT_DIR$/assets/filter.css" />
+        <option value="$PROJECT_DIR$/assets/filter.css" />
+        <option value="$PROJECT_DIR$/assets/filter.js" />
+        <option value="$PROJECT_DIR$/assets/filter.js" />
+        <option value="$PROJECT_DIR$/inc/Filter/HmuAjax.php" />
       </list>
     </option>
   </component>
@@ -199,23 +196,6 @@
               <item name="hmu-ajax-filter" type="b2602c69:ProjectViewProjectNode" />
               <item name="hmu-ajax-filter" type="462c0819:PsiDirectoryNode" />
               <item name="inc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hmu-ajax-filter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hmu-ajax-filter" type="462c0819:PsiDirectoryNode" />
-              <item name="inc" type="462c0819:PsiDirectoryNode" />
-              <item name="Base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hmu-ajax-filter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hmu-ajax-filter" type="462c0819:PsiDirectoryNode" />
-              <item name="inc" type="462c0819:PsiDirectoryNode" />
-              <item name="Filter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hmu-ajax-filter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hmu-ajax-filter" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -261,12 +241,12 @@
       <workItem from="1539637145818" duration="7938000" />
       <workItem from="1539803689194" duration="32885000" />
       <workItem from="1540063216620" duration="6444000" />
-      <workItem from="1540407964503" duration="3706000" />
+      <workItem from="1540407964503" duration="4957000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55972000" />
+    <option name="totallyTimeSpent" value="57223000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="702" extended-state="6" />
@@ -277,7 +257,7 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3075571" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.05096661" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.23787878" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49912128" visible="true" weight="0.26136363" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
@@ -446,30 +426,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/filter.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/filter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="247" column="27" lean-forward="true" selection-start-line="247" selection-start-column="27" selection-end-line="247" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/Filter/HmuAjax.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-476">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="e#338#370#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/Filter/HmuShortcode.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -477,22 +433,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/Base/Enqueue.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="38" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/Pages/Fields.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="90" column="13" lean-forward="true" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/Filter/HmuAjaxTerms.php">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="308">
+            <caret line="74" selection-start-line="74" selection-end-line="74" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/Api/Callbacks/FieldsCallbacks.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -504,10 +456,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/Pages/Fields.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="90" column="13" lean-forward="true" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/Base/Enqueue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="38" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/filter.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/inc/Filter/HmuAllTaxonomies.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="215" column="18" selection-start-line="215" selection-start-column="18" selection-end-line="215" selection-end-column="18" />
+        <state relative-caret-position="135">
+          <caret line="216" column="36" lean-forward="true" selection-start-line="216" selection-start-column="36" selection-end-line="216" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/filter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="206" column="43" selection-start-line="206" selection-start-column="43" selection-end-line="206" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/Filter/HmuAjax.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
+          <folding>
+            <element signature="e#338#370#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
