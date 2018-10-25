@@ -54,11 +54,13 @@ class HmuAllTaxonomies extends BaseController
         wp_reset_postdata();
 
         $result = array();
-        foreach ($unique_terms as $key => $unique_term) {
-            foreach ($unique_term as $term) {
-                $result [$term->taxonomy][] = $term->name;
+         if(isset($unique_terms)) {
+            foreach ($unique_terms as $key => $unique_term) {
+                foreach ($unique_term as $term) {
+                    $result [$term->taxonomy][] = $term->name;
+                }
             }
-        }
+         }
 
         return $result;
     }
